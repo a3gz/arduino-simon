@@ -16,10 +16,6 @@ int buzzerPin = btnPins[3]+1;
 int gameSet[GAME_SIZE] = {};
 int gameLen = 0;
 
-int arrayLen(int a[]) {
-  return sizeof(a)/sizeof(a[0]);
-}
-
 void gameOver() {
   gameLen = -1;
   Serial.println("GAME OVER!");
@@ -39,7 +35,6 @@ void gameOver() {
 
 void makeNextMove() {
   int r = random(3);
-  // if ( r > 3 ) r = 3;
   gameSet[gameLen] = r;
   gameLen++;
 }
